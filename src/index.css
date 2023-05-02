@@ -2,9 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap');
 
 * {
     margin: 0;
-    font-family: 'Jost', sans-serif;
+    font-family: -apple-system, Josefin Sans, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* button design  */
+.btn_regular {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 28px;
+    background: #f89223;
+    box-shadow: 0 0 30px #f89123b7;
+    position: relative;
+    z-index: 40;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.btn_regular:hover {
+    box-shadow: 0 0 0 #f89223;
+}
+
+.btn_regular::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background: #5e5e5e;
+    transition: all .3s ease-in-out;
+}
+
+.btn_regular:hover::after {
+    width: 100%;
+    border: 1px solid #5e5e5e;
+}
+
+/* profile */
+
+.profile {
+    transition: all .3s ease-in-out;
+}
+
+#dropdown {
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.profile:hover #dropdown {
+    top: 100%;
+    opacity: 1;
+    z-index: 100;
 }

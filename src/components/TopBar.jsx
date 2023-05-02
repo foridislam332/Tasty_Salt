@@ -8,7 +8,7 @@ import { FiMapPin } from "react-icons/fi";
 
 const TopBar = () => {
     return (
-        <div className="bg-primary text-white">
+        <div className="bg-primary text-white border-b">
             <div className="container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto flex items-center justify-between">
                 <div className="flex items-center">
                     {/* Social Icons */}
@@ -31,7 +31,7 @@ const TopBar = () => {
                     <p className="text-sm flex items-center gap-2">
                         <FaRegEnvelope className="text-secondary text-lg" />
                         info@example.com</p>
-                    <p className="text-sm flex items-center gap-2">
+                    <p className="text-sm hidden items-center gap-2 md:flex">
                         <FiMapPin className="text-secondary text-lg" />
                         Road-01, Block-B, West London City</p>
                 </div>
