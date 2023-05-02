@@ -30,8 +30,11 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header className={`fixed w-full z-50 transition-all duration-200 ease-in-out ${navState ? 'bg-white shadow-lg' : ''}`}>
+        <header className={`fixed w-full z-50 transition-all duration-200 ease-in-out ${navState ? 'bg-white shadow-lg' : 'bg-[#00000070] text-white'}`}>
+
+            {/* top bar */}
             <TopBar />
+
             <div className='container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto'>
 
                 <nav className={`flex justify-between items-center py-2 relative transition-all duration-200 ease-in-out ${navState ? 'py-2' : 'py-6'}`}>

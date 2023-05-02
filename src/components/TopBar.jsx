@@ -8,7 +8,7 @@ import { FiMapPin } from "react-icons/fi";
 
 const TopBar = () => {
     return (
-        <div className="bg-primary text-white border-b">
+        <div className="bg-primary text-white border-b border-gray-500">
             <div className="container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto flex items-center justify-between">
                 <div className="flex items-center">
                     {/* Social Icons */}
