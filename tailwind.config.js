@@ -6,11 +6,13 @@ export default {
   ],
   theme: {
     fontFamily: {
+      'primary-font': ['Jost', 'sans-serif'],
       'title-font': ['Cormorant Garamond', 'serif']
     },
     extend: {
       colors: {
-        'text-primary': '#f89223',
+        'primary': '#2e2f31',
+        'secondary': '#f89223'
       }
     },
   },
