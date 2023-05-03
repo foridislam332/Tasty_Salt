@@ -13,7 +13,7 @@ const TopBar = () => {
                 <div className="flex items-center">
                     {/* Social Icons */}
                     <Link to="/" className="mr-4">
-                        <FaFacebookF className="text-white" />
+                        <FaFacebookF />
                     </Link>
                     <Link to="/" className="mr-4">
                         <FaTwitter />
