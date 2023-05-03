@@ -8,6 +8,9 @@ import { MdClose } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
 import Profile from '../components/Profile';
 
+import Logo from '../assets/images/logo.png';
+import LogoWhite from '../assets/images/logo-white.png';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const user = true;
@@ -40,8 +43,9 @@ const Navbar = () => {
                 <nav className={`flex justify-between items-center py-2 relative transition-all duration-200 ease-in-out ${navState ? 'py-2' : 'py-6'}`}>
                     {/* Navbar Logo */}
                     <Link to="/" className='text-3xl'>
-                        {/* <img className='w-52' src={Logo} alt="hire hunt" /> */}
-                        Tasty Salt
+                        {
+                            navState ? <img className='w-52' src={Logo} alt="tasty-salt" /> : <img className='w-52' src={LogoWhite} alt="tasty-salt" />
+                        }
                     </Link>
 
                     {/* Navbar Toggle Button for small screens */}

@@ -8,7 +8,6 @@ const DessertsMenu = () => {
             .then(res => res.json())
             .then(data => setMenuData(data))
     }, [])
-    console.log(menuData)
 
     return (
         <section className='container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto my-24'>
