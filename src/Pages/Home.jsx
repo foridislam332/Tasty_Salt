@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../sections/Hero';
 import RecipeCategories from '../sections/RecipeCategories';
 import Chef from '../sections/Chef';
+import DessertsMenu from '../sections/DessertsMenu';
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Hero />
             <RecipeCategories />
             <Chef />
+            <DessertsMenu />
         </>
     );
 };
