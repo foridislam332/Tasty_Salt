@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { FaAngleRight } from "react-icons/fa";
+import { TfiAngleDoubleRight } from "react-icons/tfi";
 
 // images
 import ChefRecipeBg from '../assets/images/chef-banner.jpg';
@@ -15,9 +15,9 @@ const ChefRecipeBanner = () => {
                 <div className='text-center'>
                     <h1 className='text-7xl font-bold text-[#fcce9d] drop-shadow-xl'>Chef Recipes</h1>
 
-                    <div className='flex items-center justify-center gap-3 text-white'>
+                    <div className='flex items-center justify-center gap-1 text-white'>
                         <Link to='/'>Home</Link>
-                        <FaAngleRight />
+                        <TfiAngleDoubleRight className='text-secondary ml-1' />
                         <span className='text-secondary'>Chef Recipes</span>
                     </div>
                 </div>

@@ -901,6 +901,11 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.6.0.tgz#45010e1826f4d81a1b2cfaf874f1aac93998cd28"
   integrity sha512-N13NRw3T2+6Xi9J//3CGLsK2OqC8NMme3d/YX+nh05K9YHWGcv8DycHJrqGScSP4T75o8IN6nqIMhVFU8ohg8w==
 
+"@smastrom/react-rating@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@smastrom/react-rating/-/react-rating-1.3.1.tgz#2e9a8fc46443b39a323b21753799d63db98d7939"
+  integrity sha512-WOSeJ3HKorgCArbnJEOgJdiDNu77EwwfwDDTkWcEd1EUGRrIIHWg/cQKXciSuJzqBr2yb8JX3CwYn9FskTJU8A==
+
 "@types/long@^4.0.1":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"

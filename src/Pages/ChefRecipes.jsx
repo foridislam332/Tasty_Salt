@@ -1,14 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 import ChefRecipeBanner from '../sections/ChefRecipeBanner';
+import ChefRecipe from '../sections/ChefRecipe';
 
 const ChefRecipes = () => {
-    const chefRecipe = useLoaderData();
-    console.log(chefRecipe)
     return (
         <div>
             <ChefRecipeBanner />
-            Chef Recipes coming
+            <ChefRecipe />
         </div>
     );
 };
