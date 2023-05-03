@@ -4,10 +4,10 @@ import ChefRecipe from '../sections/ChefRecipe';
 
 const ChefRecipes = () => {
     return (
-        <div>
+        <>
             <ChefRecipeBanner />
             <ChefRecipe />
-        </div>
+        </>
     );
 };
 

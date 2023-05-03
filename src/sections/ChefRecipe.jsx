@@ -1,47 +1,29 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import RecipeCard from '../components/RecipeCard';
 
 // images
-import image from '../assets/images/1.jpg';
 import RecipeBg from '../assets/images/recipe-bg.jpg';
-
-// rating
-import { Rating, Star } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
 
 const ChefRecipe = () => {
     const recipeData = useLoaderData();
 
-    const { name, bio, experience, phone, email, rating, recipes, best_recipe, recipes_list } = recipeData;
-
-    const myStyles = {
-        itemShapes: Star,
-        activeFillColor: '#f89223',
-        inactiveFillColor: '#fbf1a9'
-    }
+    const { name, image_url, bio, experience, phone, email, recipes, best_recipe, recipes_list } = recipeData;
 
     return (
         <section className=''>
             <div className='container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto '>
-                <div className='grid grid-cols-2 gap-5 place-items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center mt-5 md:mt-0'>
                     <div>
                         <h1 className='text-4xl font-bold drop-shadow-lg'>{name}</h1>
                         <h3 className='my-2 pt-4'>About</h3>
-                        <p>
-                            {bio}
-                        </p>
+                        <p>{bio}</p>
 
                         <div className='flex gap-10 mt-8 text-xl'>
                             <div>
                                 <p className='font-medium'>Recipes :
                                     <span className='font-normal text-gray-600 text-lg'> {recipes}</span></p>
                                 <p className='font-medium'>Phone: <span className='font-normal text-gray-600 text-lg'>{phone}</span></p>
-
-                                <div className='flex items-center gap-2 mt-4'>
-                                    <Rating className='max-w-[140px]' readOnly value={rating} itemStyles={myStyles} />
-
-                                    <span className='text-xl'>{4.3}</span>
-                                </div>
                             </div>
 
                             <div>
@@ -52,9 +34,13 @@ const ChefRecipe = () => {
                                     <span className='font-normal text-gray-600 text-lg'> {email}</span></p>
                             </div>
                         </div>
+
+                        <p className='font-medium mt-3'>
+                            <span className='text-secondary font-bold underline'>Best Recipe :</span> {best_recipe}
+                        </p>
                     </div>
                     <div className='h-80 md:h-[480px] relative overflow-hidden'>
-                        <img src={image} alt={name} />
+                        <img src={image_url} alt={name} />
                     </div>
                 </div>
             </div>
@@ -62,21 +48,15 @@ const ChefRecipe = () => {
             <div className="bg-cover bg-center py-28"
                 style={{ backgroundImage: `url(${RecipeBg})` }} >
                 <div className='container px-4 md:px-8 lg:px-16 xl:px-20 mx-auto'>
-                    <h1 className='text-5xl text-secondary text-center pb-20 font-bold'>{name}'s Recipe</h1>
+                    <div className='text-center'>
+                        <p className='text-white text-2xl mb-4'>Most of </p>
+                        <h1 className='text-5xl text-secondary pb-20 font-bold'>{name}'s Recipe</h1>
+                    </div>
 
-                    <p className='text-white text-3xl mb-4'>
-                        <span className='text-secondary font-bold underline'>Best Recipe :</span> {best_recipe}
-                    </p>
-
-                    <div>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
                         {
                             recipes_list.map((recipe, index) =>
-                                <li
-                                    key={index}
-                                    className='bg-white mb-3 list-decimal p-3 rounded-lg shadow-lg text-3xl'
-                                >{recipe.name}
-                                    <p className='font-semibold text-base'>Cooking Method : <span className='font-normal text-indigo-600'>{recipe.cooking_method}</span></p>
-                                </li>
+                                <RecipeCard key={index} recipe={recipe} />
                             )
                         }
                     </div>
