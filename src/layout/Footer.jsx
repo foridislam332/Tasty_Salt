@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // icons
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaRegEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 import Logo from '../assets/images/logo.png';
 
@@ -16,7 +16,7 @@ const Footer = () => {
                         <p className='text-gray-300 mb-5'>Register and get notified about all the news & updates before it gets too late.</p>
 
                         <div className='flex box-border w-full'>
-                            <input className='pl-4 w-full' type="text" placeholder='Your email address' />
+                            <input className='pl-4 w-full outline-secondary' type="text" placeholder='Your email address' />
                             <button className='btn_regular w-52'>Subscribe</button>
                         </div>
                     </div>

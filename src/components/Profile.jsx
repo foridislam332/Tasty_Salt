@@ -13,21 +13,20 @@ const Profile = () => {
                 className="flex items-center text-gray-300 hover:text-primary transition-all duration-300 ease-in-out"
             >
                 <img
-                    className="h-10 w-10 rounded-full object-cover"
+                    className="h-14 w-14 rounded-full object-cover"
                     src="https://i.pravatar.cc/300"
                     alt="User avatar"
                 />
-                <span className="ml-2 text-sm font-medium">John Doe</span>
             </Link>
 
             {/* Dropdown */}
             <div
-                className={`absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-lg z-10 transition-all duration-300 ease-in-out ${isHover ? 'top-full opacity-1' : 'top-24 opacity-0'}`}>
+                className={`absolute right-0 mt-2 w-48 bg-white shadow-lg origin-top-right transition-all duration-300 ease-in-out ${isHover ? 'top-full scale-100' : 'top-12 scale-0'}`}>
                 <p
                     to="/"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                    Name
+                    John Doe
                 </p>
 
                 <p
