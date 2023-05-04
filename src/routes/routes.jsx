@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import EditProfile from "../components/EditProfile";
 import PrivateRoute from "./PrivateRoute";
 import PageNotFound from "../pages/PageNotFound";
+import AllChef from "../pages/AllChef";
 
 const routes = createBrowserRouter([
     {
@@ -16,6 +17,11 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
+                loader: () => fetch('https://tasty-salt-server-foridislam332.vercel.app/chef')
+            },
+            {
+                path: '/all-chef',
+                element: <AllChef />,
                 loader: () => fetch('https://tasty-salt-server-foridislam332.vercel.app/chef')
             },
             {

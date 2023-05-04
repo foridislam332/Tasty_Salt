@@ -1,11 +1,11 @@
 import React from 'react';
-import ChefRecipeBanner from '../sections/ChefRecipeBanner';
+import PageTopBanner from '../sections/PageTopBanner';
 import ChefRecipe from '../sections/ChefRecipe';
 
 const ChefRecipes = () => {
     return (
         <>
-            <ChefRecipeBanner />
+            <PageTopBanner slag={'Chef Recipes'} />
             <ChefRecipe />
         </>
     );
