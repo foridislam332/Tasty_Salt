@@ -14,8 +14,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { user } = useContext(AuthContext);
-    console.log(user)
+    const { user, logOut } = useContext(AuthContext);
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
@@ -84,7 +83,7 @@ const Navbar = () => {
                     </ul>
 
                     {
-                        user ? <Profile /> : <Link to='/login' className='hidden md:block btn_regular'>Login</Link>
+                        user ? <Profile user={user} logOut={logOut} /> : <Link to='/login' className='hidden md:block btn_regular'>Login</Link>
                     }
 
                     {/* mobile menu */}
@@ -116,10 +115,10 @@ const Navbar = () => {
                                 src="https://i.pravatar.cc/300"
                                 alt="User avatar"
                             />
-                            <span className="ml-2 text-sm font-medium">John Doe</span>
+                            <span className="ml-2 text-sm font-medium">{user?.displayName}</span>
                         </Link>
 
-                        <button className='btn_regular'>LogOut</button>
+                        <button onClick={() => logOut()} className='btn_regular'>LogOut</button>
                     </ul>
                 </nav>
             </div>

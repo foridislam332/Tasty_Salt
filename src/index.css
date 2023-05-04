@@ -50,6 +50,10 @@
     border: 1px solid #5e5e5e;
 }
 
+.logout {
+    background: rgb(255, 98, 70) !important;
+}
+
 /* profile */
 
 .profile {

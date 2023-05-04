@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleSignIn } = useContext(AuthContext);
     const handleOnSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -17,8 +17,20 @@ const Login = () => {
 
         signInUser(email, password)
             .then(result => {
-                console.log(result.user)
                 form.reset();
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                })
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(() => {
+
             })
             .catch(error => {
                 toast.error(error.message, {
@@ -50,7 +62,10 @@ const Login = () => {
                     <span className='border-b w-full mr-8'></span>
                 </div>
                 <div className='flex items-center justify-around gap-5 text-lg mb-5'>
-                    <button className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'><FaGoogle /> Google</button>
+                    <button
+                        onClick={handleGoogleSignIn}
+                        className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'
+                    ><FaGoogle className='text-[#0F9D58]' /> Google</button>
                     <button className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'><FaGithub /> GitHub</button>
                 </div>
                 <p className='text-center'>
