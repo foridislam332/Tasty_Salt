@@ -5,6 +5,10 @@ import Footer from './Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import PageLoader from '../components/PageLoader';
 
+// toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Main = () => {
     const navigation = useNavigation();
 
@@ -27,8 +31,9 @@ const Main = () => {
             <main>
                 {content}
             </main>
-
             <Footer />
+
+            <ToastContainer />
         </>
     );
 };

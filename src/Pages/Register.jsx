@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser, profileUpdate } = useContext(AuthContext)
@@ -15,27 +16,41 @@ const Register = () => {
         const photo = form.photoUrl.value;
 
         if (password.length < 6) {
-            console.log('The password is less than 6 characters')
+            toast.error('The password is less than 6 characters!', {
+                position: "top-center",
+                autoClose: 3000,
+            });
         }
         else if (password !== confirmPassword) {
-            console.log('DOnt match')
+            toast.warning('Confirm your password !', {
+                position: "top-center",
+                autoClose: 3000,
+            });
         }
 
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
 
+                // profile update
                 profileUpdate(user, name, photo)
                     .then(() => {
-                        console.log(user)
+
                     })
                     .catch(error => {
-                        console.log(error.message)
+                        toast.error(error.message, {
+                            position: "top-center",
+                            autoClose: 4000,
+                        })
                     })
+
+                form.reset();
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage)
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                })
             });
     }
 

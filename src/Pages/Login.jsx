@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from '../Providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
+    const { signInUser } = useContext(AuthContext);
     const handleOnSubmit = e => {
         e.preventDefault();
         const form = e.target;
 
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                form.reset();
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                })
+            })
     }
     return (
         <div className='flex flex-col items-center justify-center pt-52 pb-20'>
