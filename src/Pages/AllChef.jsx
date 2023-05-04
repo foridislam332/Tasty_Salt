@@ -6,7 +6,9 @@ const AllChef = () => {
     return (
         <div>
             <PageTopBanner slag={'All Chef'} />
-            <Chef />
+            <div className='py-20'>
+                <Chef />
+            </div>
         </div>
     );
 };
