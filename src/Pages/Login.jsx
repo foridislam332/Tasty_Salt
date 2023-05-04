@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from '../Providers/AuthProvider';
@@ -9,6 +9,11 @@ import googleImg from '../assets/images/google.png';
 
 const Login = () => {
     const { signInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+
+    // navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // sign in with email
     const handleOnSubmit = e => {
@@ -21,6 +26,7 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
@@ -34,7 +40,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(() => {
-
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
@@ -48,7 +54,7 @@ const Login = () => {
     const handleGitHubSignIn = () => {
         gitHubSignIn()
             .then(() => {
-
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
