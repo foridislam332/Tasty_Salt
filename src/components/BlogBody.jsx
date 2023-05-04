@@ -7,7 +7,7 @@ const BlogBody = () => {
             <div className='text-right mb-10'>
                 <DownloadPdf />
             </div>
-            <div id='component-to-download' className='grid grid-cols-1 md:grid-cols-2 gap-10 w-full'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10 w-full'>
                 <div className='shadow-xl p-4 rounded-lg hover:shadow-[#f891236c] transition-all duration-300 ease-in-out'>
                     <h2 className='text-2xl mb-2'><span className='font-semibold'>Question : </span> Tell us the differences between uncontrolled and controlled components.</h2>
 

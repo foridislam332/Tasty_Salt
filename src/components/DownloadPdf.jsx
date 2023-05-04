@@ -5,7 +5,7 @@ import html2canvas from 'html2canvas';
 const DownloadPdf = () => {
     const handleDownload = () => {
         const input = document.getElementById('component-to-download');
-        html2canvas(input, { scale: .7, top: 500 }).then((canvas) => {
+        html2canvas(input, { scale: .59, top: 500 }).then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jsPDF();
             pdf.addImage(imgData, 'PNG', 0, 0);

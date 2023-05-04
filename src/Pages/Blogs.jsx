@@ -4,10 +4,10 @@ import BlogBody from '../components/BlogBody';
 
 const Blogs = () => {
     return (
-        <>
+        <div id='component-to-download'>
             <PageTopBanner slag='Our Blogs' />
             <BlogBody />
-        </>
+        </div>
     );
 };
 
