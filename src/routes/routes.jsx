@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import ChefRecipes from "../pages/ChefRecipes";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import EditProfile from "../components/EditProfile";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/edit',
+                element: <EditProfile />
             }
         ]
     }

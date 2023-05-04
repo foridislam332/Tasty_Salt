@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { FaPencilAlt } from "react-icons/fa";
+
 const Profile = ({ user, logOut }) => {
     const [isHover, setIsHover] = useState(false);
     return (
@@ -21,20 +23,25 @@ const Profile = ({ user, logOut }) => {
 
             {/* Dropdown */}
             <div
-                className={`absolute right-0 mt-2 min-w-48 bg-white shadow-lg origin-top-right transition-all duration-300 ease-in-out ${isHover ? 'top-full scale-100' : 'top-12 scale-0'}`}>
+                className={`absolute right-0 mt-2 max-w-xs min-w-[200px] bg-white shadow-lg origin-top-right transition-all duration-300 ease-in-out ${isHover ? 'top-full scale-100' : 'top-12 scale-0'}`}>
                 <p
                     to="/"
-                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                    className="relative block w-full px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 z-10"
                 >
                     {user?.displayName}
+                    <Link to='/edit' className='absolute top-0 right-0 bg-secondary p-2 rounded-full z-40 m-1 hover:shadow-lg hover:shadow-secondary transition-all duration-300 ease-in-out'>
+                        <FaPencilAlt className='text-xs text-white' />
+                    </Link>
                 </p>
 
-                <p
-                    to="/"
-                    className="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                    Email: {user?.email}
-                </p>
+                {
+                    user.email && <p
+                        to="/"
+                        className="block px-4 py-1 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                        Email: <br /> {user.email}
+                    </p>
+                }
 
                 <button
                     className="w-full btn_regular text-red-600 mt-3 logout"

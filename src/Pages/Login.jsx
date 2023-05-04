@@ -1,13 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { AuthContext } from '../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 
+import googleImg from '../assets/images/google.png';
 
 const Login = () => {
-    const { signInUser, googleSignIn } = useContext(AuthContext);
+    const { signInUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+
+    // sign in with email
     const handleOnSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -27,8 +30,23 @@ const Login = () => {
             })
     }
 
+    // sign in with google
     const handleGoogleSignIn = () => {
         googleSignIn()
+            .then(() => {
+
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                })
+            })
+    }
+
+    // sign in with github
+    const handleGitHubSignIn = () => {
+        gitHubSignIn()
             .then(() => {
 
             })
@@ -65,8 +83,13 @@ const Login = () => {
                     <button
                         onClick={handleGoogleSignIn}
                         className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'
-                    ><FaGoogle className='text-[#0F9D58]' /> Google</button>
-                    <button className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'><FaGithub /> GitHub</button>
+                    >
+                        <img className='w-5' src={googleImg} alt="google" /> Google</button>
+
+                    <button
+                        onClick={handleGitHubSignIn}
+                        className='flex items-center justify-center shadow-xl w-full py-2 px-4 gap-2 rounded-lg'
+                    ><FaGithub /> GitHub</button>
                 </div>
                 <p className='text-center'>
                     New to Tasty Salt?
