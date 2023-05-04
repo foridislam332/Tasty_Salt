@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 
 import { BiLike } from "react-icons/bi";
 import { Link } from 'react-router-dom';
@@ -9,7 +10,9 @@ const SingleChef = ({ chef }) => {
         <div className='shadow-xl p-4 rounded-lg bg-[#222D3B]
                 transition-all duration-300 ease-in-out hover:shadow-[#222d3b80]
                 '>
-            <img className='rounded-lg' src={image_url} alt={name} />
+            <LazyLoad offset={100} threshold={0.95}>
+                <img className='rounded-lg' src={image_url} alt={name} />
+            </LazyLoad>
 
             <h3 className='text-2xl text-secondary drop-shadow-xl mb-5 mt-3'>{name}</h3>
 
