@@ -4,7 +4,7 @@ import MenuCard from '../components/MenuCard';
 const DessertsMenu = () => {
     const [menuData, setMenuData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/menu')
+        fetch('https://tasty-salt-server-foridislam332.vercel.app/menu')
             .then(res => res.json())
             .then(data => setMenuData(data))
     }, [])

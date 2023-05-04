@@ -14,12 +14,12 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/chef')
+                loader: () => fetch('https://tasty-salt-server-foridislam332.vercel.app/chef')
             },
             {
                 path: '/chef/:id',
                 element: <ChefRecipes />,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+                loader: ({ params }) => fetch(`https://tasty-salt-server-foridislam332.vercel.app/chef/${params.id}`)
             },
             {
                 path: '/login',
