@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
     const handleOnSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -18,7 +20,16 @@ const Register = () => {
         else if (password !== confirmPassword) {
             console.log('DOnt match')
         }
-        console.log(name, email, password, confirmPassword, photo)
+
+        createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+            });
     }
 
     return (
@@ -29,7 +40,7 @@ const Register = () => {
                     <div className="rounded-md shadow-sm flex flex-col gap-4">
                         <div>
                             <label htmlFor="name" className='block'>Name :</label>
-                            <input id='name' name="name" type="text" placeholder="Name" required className='w-full py-2 pl-3 outline-secondary border' />
+                            <input id='name' name="name" type="text" placeholder="Name" className='w-full py-2 pl-3 outline-secondary border' />
                         </div>
                         <div>
                             <label htmlFor="email" className='block'>Email address :</label>

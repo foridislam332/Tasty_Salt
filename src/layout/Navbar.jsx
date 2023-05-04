@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import TopBar from '../components/TopBar';
 import ActiveLink from '../components/ActiveLink';
 import { Link } from 'react-router-dom';
@@ -10,10 +10,12 @@ import Profile from '../components/Profile';
 
 import Logo from '../assets/images/logo.png';
 import LogoWhite from '../assets/images/logo-white.png';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const user = true;
+    const { user } = useContext(AuthContext);
+    console.log(user)
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
