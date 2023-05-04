@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import EditProfile from "../components/EditProfile";
 import PrivateRoute from "./PrivateRoute";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
             {
                 path: '/edit',
                 element: <EditProfile />
+            },
+            {
+                path: '*',
+                element: <PageNotFound />
             }
         ]
     }
