@@ -14,11 +14,18 @@ const Profile = ({ user, logOut }) => {
                 to="/profile"
                 className="flex items-center text-gray-300 hover:text-primary transition-all duration-300 ease-in-out"
             >
-                <img
-                    className="h-14 w-14 rounded-full object-cover shadow-lg shadow-[#00000049]"
-                    src={user?.photoURL}
-                    alt="User avatar"
-                />
+                {
+                    user?.photoURL ? <img
+                        className="h-14 w-14 rounded-full object-cover shadow-lg shadow-[#00000049]"
+                        src={user?.photoURL}
+                        alt="User avatar"
+                    /> :
+                        <img
+                            className="h-14 w-14 rounded-full object-cover shadow-lg shadow-[#00000049]"
+                            src="https://i.pravatar.cc/300"
+                            alt="User avatar"
+                        />
+                }
             </Link>
 
             {/* Dropdown */}
