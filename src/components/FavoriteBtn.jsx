@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 
 import { RiHeartAddLine, RiHeartFill } from "react-icons/ri";
-import swal from 'sweetalert';
+import { toast } from 'react-toastify';
 
 const FavoriteBtn = ({ count }) => {
     const [favorite, setFavorite] = useState(count);
 
-    const handlefavorite = () => {
+    const handleFavorite = () => {
         setFavorite(count + 1);
-        swal("Good job!", "Recipe Favorite done!", "success");
+        if (count < favorite) {
+            toast.success("Already favorite !", {
+                position: "top-center",
+                autoClose: 3000,
+            })
+        } else {
+            toast.success("Favorite added Done !", {
+                position: "top-center",
+                autoClose: 3000,
+            })
+        }
     }
     return (
-        <button onClick={handlefavorite} className='ml-16 flex' title='Favorite'>
+        <button onClick={handleFavorite} className='ml-16 flex' title='Favorite'>
             <span>{favorite}</span>
             {
                 count === favorite ? <RiHeartAddLine className='text-3xl text-red-500' /> : <RiHeartFill className='text-3xl text-red-500' />
