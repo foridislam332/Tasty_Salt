@@ -51,7 +51,7 @@ const Navbar = () => {
 
                     {/* Navbar Toggle Button for small screens */}
                     <button
-                        className="block md:hidden text-gray-900 focus:outline-none"
+                        className="block md:hidden text-secondary focus:outline-none text-3xl"
                         id="navbar-toggle"
                         onClick={toggleNavbar}
                     >
