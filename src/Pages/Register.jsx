@@ -28,7 +28,8 @@ const Register = () => {
             });
             return
         }
-        else if (password !== confirmPassword) {
+
+        if (password !== confirmPassword) {
             toast.warning('Confirm your password !', {
                 position: "top-center",
                 autoClose: 3000,
