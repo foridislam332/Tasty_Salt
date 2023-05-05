@@ -94,7 +94,7 @@ const Navbar = () => {
                             Home
                         </ActiveLink>
 
-                        <ActiveLink to="/chef">
+                        <ActiveLink to="/all-chef">
                             Chef's
                         </ActiveLink>
 

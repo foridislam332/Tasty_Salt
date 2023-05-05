@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
 
                 {/* footer bottom */}
-                <div className='border-t border-black flex flex-col md:flex-row items-center justify-between py-5 text-gray-300'>
+                <div className='border-t border-black flex flex-col md:flex-row items-center justify-between py-5 text-gray-300 text-center'>
                     <p>@Copyright by Tasty Salt-2023, All Right Reserved.</p>
 
                     <div>
