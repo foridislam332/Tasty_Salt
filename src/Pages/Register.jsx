@@ -26,12 +26,14 @@ const Register = () => {
                 position: "top-center",
                 autoClose: 3000,
             });
+            return
         }
         else if (password !== confirmPassword) {
             toast.warning('Confirm your password !', {
                 position: "top-center",
                 autoClose: 3000,
             });
+            return
         }
 
         createUser(email, password)

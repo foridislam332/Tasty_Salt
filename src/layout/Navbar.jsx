@@ -87,7 +87,7 @@ const Navbar = () => {
                     {/* mobile menu */}
                     <div onClick={() => setIsOpen(false)} className={`absolute md:hidden w-full h-screen top-0 left-0 bg-[#0000007b] transition-all duration-200 ease-in-out ${isOpen ? 'scale-100' : 'scale-0'}`}></div>
                     <ul
-                        className={`flex flex-col gap-5 absolute w-64 h-screen p-8 top-0 bg-dark transition-all duration-300 ease-in-out bg-primary text-white z-50 ${isOpen ? "-left-4" : "-left-full"}`}
+                        className={`flex md:hidden flex-col gap-5 absolute w-64 h-screen p-8 top-0 bg-dark transition-all duration-300 ease-in-out bg-primary text-white z-50 ${isOpen ? "-left-4" : "-left-full"}`}
                     >
                         <ActiveLink to="/">
                             Home
