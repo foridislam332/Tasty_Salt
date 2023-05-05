@@ -11,7 +11,7 @@ const Hero = () => {
                 <div className='mt-24'>
                     <h4 className='text-secondary text-xl'>Welcome To Tasty Salt</h4>
 
-                    <h1 className='text-7xl font-bold my-8 text-[#fcce9d]'>Find Your Favorite <br /> Tasty Food</h1>
+                    <h1 className='text-4xl md:text-7xl font-bold my-8 text-[#fcce9d]'>Find Your Favorite <br /> Tasty Food</h1>
 
                     <p className='text-gray-300'>Creative space for food and recipes where you will find healthy culinary inspiration.</p>
 
